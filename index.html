@@ -39,6 +39,19 @@
             touch-action: none; /* Prevent scrolling/zooming while playing */
         }
 
+        @media screen and (max-width: 768px) {
+            #game-canvas {
+                width: auto !important;
+                height: auto !important;
+                max-width: 90vw;
+                max-height: 80vh;
+            }
+            #score-board {
+                top: -30px;
+                font-size: 1rem;
+            }
+        }
+
         body::before {
             content: "";
             position: fixed;
