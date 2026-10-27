@@ -292,6 +292,20 @@
         // Input Handling with Queue
         window.addEventListener('keydown', e => {
             const key = e.key;
+
+            // Space to start/reboot
+            if (key === ' ' || key === 'Spacebar') {
+                if (!gameRunning) {
+                    if (!landingPage.classList.contains('hidden')) {
+                        landingPage.click();
+                    } else if (killScreen.style.display === 'flex') {
+                        resetGame();
+                    }
+                }
+                e.preventDefault(); // Prevent page scrolling
+                return;
+            }
+
             let newDx = dx;
             let newDy = dy;
 
